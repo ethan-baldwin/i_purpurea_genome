@@ -10,7 +10,7 @@
 #SBATCH --output=/scratch/eab77806/logs/%x_%j.out
 #SBATCH --error=/scratch/eab77806/logs/%x_%j.error
 
-OUTDIR="/scratch/eab77806/genome_assembly/scaffolding/hap1"
+OUTDIR="/scratch/eab77806/jim_projects/ipomoea/scaffolding"
 if [ ! -d $OUTDIR ]
 then
     mkdir -p $OUTDIR
