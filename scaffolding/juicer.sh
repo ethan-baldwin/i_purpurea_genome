@@ -3,8 +3,8 @@
 #SBATCH --partition=highmem_p
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
-#SBATCH --mem=200gb
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=100gb
 #SBATCH --time=120:00:00
 #SBATCH --mail-type=END,FAIL
 #SBATCH --output=/scratch/eab77806/logs/%x_%j.out
@@ -22,7 +22,7 @@ ml YaHS/1.1-GCC-11.3.0
 # name of assembly file
 assembly='/scratch/eab77806/jim_projects/ipomoea/assembly_primary/hifiasm.p_ctg.fa'
 
-(juicer pre yahs.out.bin yahs.out_scaffolds_final.agp $assembly.fai | sort -k2,2d -k6,6d -T ./ --parallel=16 -S32G | awk 'NF' > $asssembly.alignments_sorted.txt.part) && (mv $asssembly.alignments_sorted.txt.part $asssembly.alignments_sorted.txt)
+(juicer pre yahs.bin yahs_scaffolds_final.agp $assembly.fai | sort -k2,2d -k6,6d -T ./ --parallel=16 -S32G | awk 'NF' > $asssembly.alignments_sorted.txt.part) && (mv $asssembly.alignments_sorted.txt.part $asssembly.alignments_sorted.txt)
 
 ml Juicer/1.6-foss-2022a-CUDA-11.7.0
 
