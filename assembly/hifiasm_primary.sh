@@ -20,4 +20,4 @@ cd $OUTDIR
 
 ml hifiasm/0.24.0-GCCcore-12.3.0
 
-hifiasm -o hifiasm -t $SLURM_CPUS_PER_TASK hifi/out.fastq.gz
+hifiasm -o hifiasm -t $SLURM_CPUS_PER_TASK --primary hifi/out.fastq.gz
