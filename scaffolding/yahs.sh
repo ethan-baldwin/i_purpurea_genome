@@ -21,9 +21,9 @@ ml YaHS/1.2.2-GCC-11.3.0
 
 # path to assembly file
 assembly='/scratch/eab77806/jim_projects/ipomoea/assembly_primary/hifiasm.p_ctg.fa'
-prefix='yahs'
+prefix='yahs_no_ec'
 
-yahs $assembly ${assembly}__hic_aligned_trimmed_dedupped.sorted.bam -o $prefix
+yahs $assembly ${assembly}__hic_aligned_trimmed_dedupped.sorted.bam -o $prefix --no-contig-ec
 
 # ml SeqKit/2.5.1
 
