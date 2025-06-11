@@ -17,7 +17,7 @@ then
 fi
 cd $OUTDIR
 
-ml YaHS/1.1-GCC-11.3.0
+ml YaHS/1.2.2-GCC-11.3.0
 
 # path to assembly file
 assembly='/scratch/eab77806/jim_projects/ipomoea/assembly_primary/hifiasm.p_ctg.fa'
