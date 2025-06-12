@@ -17,9 +17,9 @@ then
 fi
 cd $OUTDIR
 
-ml YaHS/1.1-GCC-11.3.0
+ml YaHS/1.2.2-GCC-11.3.0
 
 assembly='/scratch/eab77806/jim_projects/ipomoea/assembly_primary/hifiasm.p_ctg.fa'
 
-# juicer post -o yahs_final yahs_no_ec.review.assembly yahs_no_ec.liftover.agp $assembly
-juicer post -o test yahs_no_ec.assembly yahs_no_ec.liftover.agp $assembly
+juicer post -o yahs_final yahs_no_ec.review.assembly yahs_no_ec.liftover.agp $assembly
+# juicer post -o test yahs_no_ec.assembly yahs_no_ec.liftover.agp $assembly
