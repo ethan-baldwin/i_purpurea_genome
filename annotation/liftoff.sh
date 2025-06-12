@@ -20,7 +20,7 @@ cd $OUTDIR
 ml Liftoff/1.6.3
 
 GFF="/scratch/eab77806/jim_projects/ipomoea/previous_genome/Ipomoea_purpurea_annos1-cds0-id_typename-nu1-upa1-add_chr0.gid58735.gff"
-REF="/scratch/eab77806/jim_projects/ipomoea/previous_genome/Ipomoea_purpurea.faa"
+REF="/scratch/eab77806/jim_projects/ipomoea/previous_genome/Ipomoea_purpurea.fixed_headers.fa"
 ASSEMBLY="/scratch/eab77806/jim_projects/ipomoea/fasta/yahs_final.FINAL.fa"
 OUT_GFF="ipomoea_purpurea_liftoff.gff3"
 
