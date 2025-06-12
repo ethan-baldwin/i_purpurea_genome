@@ -19,11 +19,11 @@ cd $OUTDIR
 # load busco
 ml BUSCO
 
-GENOME="/scratch/eab77806/jim_projects/ipomoea/fasta/"
+GENOME="/scratch/eab77806/jim_projects/ipomoea/fasta/i_purpurea.fa"
 PEPTIDE="/scratch/eab77806/jim_projects/ipomoea/annotation/i_purpurea.fa.peptides.nofilter.fasta"
 
 # run busco for protein annotation completeness assessment using the lineage dataset embryophyta_odb10
-busco -m protein -i $PEPTIDE -l eudicots_odb10 -o i_purpurea_annotation.prot.eud.BUSCO.out -c $SLURM_CPUS_PER_TASK
+# busco -m protein -i $PEPTIDE -l eudicots_odb10 -o i_purpurea_annotation.prot.eud.BUSCO.out -c $SLURM_CPUS_PER_TASK
 
 # run busco in genome mode
 busco -m genome -i $GENOME -l eudicots_odb10 -o i_purpurea_annotation.genome.eud.BUSCO.out -c $SLURM_CPUS_PER_TASK -f
