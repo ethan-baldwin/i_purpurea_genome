@@ -21,4 +21,4 @@ cd $OUTDIR
 ml OrthoFinder/2.5.4-foss-2022a
 
 # run orthofinder
-orthofinder -f ./tmp -t 16 -a 1 -X -o ./
+orthofinder -f ./tmp -t 16 -a 1 -X -o ./orthofinder 
