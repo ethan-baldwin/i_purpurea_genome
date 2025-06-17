@@ -22,7 +22,39 @@ parse_annotations(rawGenomeRepo=genomeRepo,
                   headerSep=" ",
                   gffIdColumn = "ID")
 
-gpar <- init_genespace(wd = wd, path2mcscanx = path2mcscanx, nCores = 16,
+gpar <- init_genespace(wd = wd, path2mcscanx = path2mcscanx, nCores = 4,
                        dotplots = "never")
 
-out <- run_genespace(gpar)
+out <- run_genespace(gpar,overwrite=TRUE)
+
+invchr <- data.frame(genome = c("i_purpurea","i_purpurea","i_purpurea","i_purpurea","i_purpurea","i_nil","i_nil","i_nil","i_nil","i_purpurea","i_nil"),
+                     chr = c("scaffold_7","scaffold_2","scaffold_3","scaffold_9","scaffold_8","chr11","chr7","chr6","chr3","scaffold_6","chr13"))
+
+
+ripDat <- plot_riparian(
+  gsParam = gpar,
+    # refGenome = "i_purpurea",
+  useOrder = FALSE,
+  minChrLen2plot=10000000,
+  forceRecalcBlocks = FALSE,
+  invertTheseChrs = invchr
+)
+
+# output plot to pdf
+pdf(file="riparian_bp.pdf", width = 10)
+ripDat
+dev.off()
+
+ripDat <- plot_riparian(
+  gsParam = gpar,
+  refGenome = "i_purpurea",
+  useOrder = TRUE,
+  minChrLen2plot=1000,
+  forceRecalcBlocks = FALSE,
+  invertTheseChrs = invchr
+)
+
+# output plot to pdf
+pdf(file="riparian_gene_order.pdf", width = 10)
+ripDat
+dev.off()
